@@ -13,6 +13,8 @@ and open the template in the editor.
     <body>
         <span th:text="${usuario.nombre}"></span>
         <span th:text="${usuario.apellido}"></span>
+        <span th:if="${usuario.email}" th:text="${usuario.email}"></span><br>
+        <span th:if="${usuario.email == null}">El usuario no tiene correo</span>
         <div>TODO write content</div>
     </body>
 </html>

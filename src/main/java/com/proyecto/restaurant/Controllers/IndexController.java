@@ -6,6 +6,8 @@
 package com.proyecto.restaurant.Controllers;
 
 import com.proyecto.restaurant.Models.Usuario;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +36,19 @@ public class IndexController {
         usuario.setNombre("Frank Omar");
         model.addAttribute("usuario",usuario);
         return "perfil";
+    }
+    
+     @GetMapping({"/listar"})
+    public String listar(Model model){
+        List<Usuario> usuarios=new ArrayList<>();
+        usuarios.add(new Usuario("Frank","Olaechea","frankomarolaecheabendezu@gmail.com"));
+        usuarios.add(new Usuario("Karla","Santa Cruz","karlavane28@gmail.com"));
+      /*  usuario.setApellido("Olaechea Bendezú");
+        usuario.setNombre("Frank Omar");
+        
+        */
+      model.addAttribute("usuarios",usuarios);
+      return "listar";
     }
     
     
